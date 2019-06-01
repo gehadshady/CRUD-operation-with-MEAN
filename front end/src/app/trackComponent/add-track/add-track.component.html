@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="text-center">Add New Track</h1>
+  <form #Fref="ngForm" (submit)=addTrack(this.newTrack)>
+    <!-- <div class="form-group">
+      <label for="tracks">select track</label>
+      <select class="form-control" id="tracks">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        </select>
+    </div> -->
+    <input required [(ngModel)]="newTrack" name="Name" type="text" class="form-control" id="trackName" placeholder="Enter Track Name">
+    <button [disabled]="!Fref.valid" class="btn btn-lg btn-info mt-3">Add</button>
+  </form>
+</div>

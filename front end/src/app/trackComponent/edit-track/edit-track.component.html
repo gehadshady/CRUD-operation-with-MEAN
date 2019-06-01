@@ -1,0 +1,15 @@
+<div class="container my-3">
+  <form  #Fref="ngForm" class="w-50" (submit)=editTrack(selectedTrack)>
+  <div class="form-group">
+    <label for="tracks">select track :</label>
+    <select [(ngModel)]="selectedTrack._id" class="form-control" id="tracks" name="select">
+      <option *ngFor="let track of AllTracks" [value]="track._id">{{track.trackName}}</option>   
+    </select>
+  </div> 
+  <div class="form-group">
+    <input required type="text" [(ngModel)]="selectedTrack.trackName" name="Name" class="form-control" id="" placeholder="Enter track new name ..">
+    <button [disabled]="!Fref.valid" class="btn btn-info mt-3">Edit</button>
+  </div>
+  </form>
+  <button class="btn btn-danger mt-3" (click)="deleteTrack(selectedTrack)">Delete This Track</button>
+</div>
